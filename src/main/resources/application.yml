@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: my-app
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/my-database
+    username: my-username
+    password: my-password
+    pool:
+      name: my-pool
+      initial-size: 10
+      max-size: 20
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    user: my-username
+    password: my-password
+    url: jdbc:postgresql://localhost:5432/my-database
+
+logging:
+  level:
+    root: info
+    org.springframework.data.r2dbc: debug
+    io.r2dbc.spi: debug

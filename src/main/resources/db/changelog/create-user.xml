@@ -27,7 +27,7 @@
 <!--        </createTable>-->
 <!--    </changeSet>-->
 
-    <changeSet id="02" author="coding_world">
+    <changeSet id="02" author="mirkomil.ablayev">
         <createTable tableName="users"  >
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints unique="true" nullable="false" primaryKey="true"/>

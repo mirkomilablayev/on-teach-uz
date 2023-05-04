@@ -1,24 +1,15 @@
 spring:
   application:
     name: my-app
-
   r2dbc:
-    url: r2dbc:postgresql://localhost:5432/my-database
-    username: my-username
-    password: my-password
-    pool:
-      name: my-pool
-      initial-size: 10
-      max-size: 20
-
+    url: r2dbc:postgresql://localhost:5432/on_teach_uz_db
+    username: postgres
+    password: root123
   liquibase:
-    change-log: classpath:db/changelog/db.changelog-master.yaml
-    user: my-username
-    password: my-password
-    url: jdbc:postgresql://localhost:5432/my-database
+    change-log: classpath:db/master.xml
+    user: postgres
+    password: root123
+    url: jdbc:postgresql://localhost:5432/on_teach_uz_db
+server:
+  port: 7979
 
-logging:
-  level:
-    root: info
-    org.springframework.data.r2dbc: debug
-    io.r2dbc.spi: debug

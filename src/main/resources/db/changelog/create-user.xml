@@ -4,27 +4,47 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
 
-    <changeSet id="create-user" author="mirkomil.ablayev">
-        <createTable tableName="users">
-            <column name="id" type="bigserial">
-                <constraints primaryKey="true"/>
-            </column>
-            <column name="firstname" type="varchar(128)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="lastname" type="varchar(128)">
-                <constraints />
-            </column>
-            <column name="username" type="varchar(128)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="password" type="varchar(128)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="role" type="varchar(255)[]">
-                <constraints nullable="false"/>
-            </column>
+<!--    <changeSet id="create-user-table" author="mirkomil.ablayev">-->
+<!--        <createTable tableName="users">-->
+<!--            <column name="id" type="BIGINT" autoIncrement="true">-->
+<!--                <constraints primaryKey="true" nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="firstname" type="VARCHAR(255)">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="lastname" type="VARCHAR(255)">-->
+<!--                <constraints nullable="true"/>-->
+<!--            </column>-->
+<!--            <column name="username" type="VARCHAR(255)">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="password" type="VARCHAR(255)">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="roles" type="VARCHAR(255)[]">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
 
+    <changeSet id="02" author="coding_world">
+        <createTable tableName="users"  >
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints unique="true" nullable="false" primaryKey="true"/>
+            </column>
+            <column name="firstname" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="username" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="roles" type="varchar(255)[]" />
         </createTable>
     </changeSet>
 

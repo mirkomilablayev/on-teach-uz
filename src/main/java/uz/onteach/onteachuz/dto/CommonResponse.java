@@ -1,14 +1,15 @@
 package uz.onteach.onteachuz.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CommonResult<T> {
-    private int code;
-    private String message;
+@Data
+public class CommonResponse <T>{
     private T data;
+    private String message;
+    private int code;
 }
